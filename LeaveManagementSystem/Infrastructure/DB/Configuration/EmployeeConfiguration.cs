@@ -8,7 +8,6 @@ namespace LeaveManagementSystem.Infrastructure.DB.Configuration
     {
         public void Configure(EntityTypeBuilder<Employee> builder)
         {
-            // Configure the primary key
             builder.HasKey(e => e.Id);
 
             builder.Property(e => e.Name)
@@ -26,17 +25,14 @@ namespace LeaveManagementSystem.Infrastructure.DB.Configuration
             builder.Property(e => e.State)
                 .IsRequired();
 
-            // Set the RoleId property as required
             builder.Property(e => e.RoleId)
                 .IsRequired();
 
-            // Define the relationship between Employee and Role (many-to-one relationship)
             builder.HasOne(e => e.Role)
                 .WithMany()
                 .HasForeignKey(e => e.RoleId)
                 .IsRequired();
 
-            // Define table-level constraints, such as a check for Name length
             builder.ToTable("Employee", t =>
             {
                 t.HasCheckConstraint("CK_Name_MinLength", "LEN(Name) >= 3");
@@ -47,7 +43,6 @@ namespace LeaveManagementSystem.Infrastructure.DB.Configuration
                 t.HasCheckConstraint("CK_Password_MinLength", "LEN(Password) >= 5");
             });
 
-            // Email pattern
             builder.ToTable("Employee", t =>
             {
                 t.HasCheckConstraint("CK_Email_Format", "[Email] LIKE '%@%.com'");

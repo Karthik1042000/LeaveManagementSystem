@@ -2,15 +2,13 @@
 let globalRole;
 window.onload = function () {
     fetchCachedUserDetails();
-    // Attach blur event listeners to each input field
     document.getElementById("startDateField").onblur = validateStartDate;
     document.getElementById("endDateField").onblur = validateEndDate;
     document.getElementById("leaveTypeField").onblur = validateLeaveType;
-
-    // Attach submit event to the form
+    
     document.getElementById("leaveApplicationForm").onsubmit = function (event) {
         if (!checkFormValidity()) {
-            event.preventDefault(); // Prevent form submission if the form is not valid
+            event.preventDefault(); 
         }
     };
 };
@@ -31,7 +29,6 @@ async function fetchCachedUserDetails() {
     }
 }
 
-// Function to validate Start Date
 function validateStartDate(showError = false) {
     var startDate = new Date(document.getElementById("startDateField").value);
     var today = new Date();
@@ -47,7 +44,6 @@ function validateStartDate(showError = false) {
     }
 }
 
-// Function to validate End Date
 function validateEndDate(showError = false) {
     var startDate = new Date(document.getElementById("startDateField").value);
     var endDate = new Date(document.getElementById("endDateField").value);
@@ -62,7 +58,6 @@ function validateEndDate(showError = false) {
     }
 }
 
-// Function to validate Leave Type
 function validateLeaveType(showError = false) {
     var leaveType = document.getElementById("leaveTypeField").value;
     const leaveTypeFieldError = document.getElementById("leaveTypeFieldError");
@@ -76,20 +71,17 @@ function validateLeaveType(showError = false) {
     }
 }
 
-// Function to check the entire form validity
 function checkFormValidity() {
     var isStartDateValid = validateStartDate(true);
     var isEndDateValid = validateEndDate(true);
     var isLeaveTypeValid = validateLeaveType(true);
-
-    // Check if all validations pass
+    
     return isStartDateValid && isEndDateValid && isLeaveTypeValid;
 }
 
 document.getElementById('leaveApplicationForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
-    // Collect the form data
     const formData = {
         startDate: new Date(document.getElementById("startDateField").value),
         endDate: new Date(document.getElementById("endDateField").value),
@@ -102,13 +94,12 @@ document.getElementById('leaveApplicationForm').addEventListener('submit', async
     };
     console.log(formData);
     try {
-        // Send a POST request to the server
         const response = await fetch('/LeaveApplication/SaveLeaveApplication', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(formData) // Convert formData to JSON string
+            body: JSON.stringify(formData)
         });
 
         if (response.ok) {
@@ -124,7 +115,7 @@ document.getElementById('leaveApplicationForm').addEventListener('submit', async
                 window.location.href = '/Home/Index';
             }, 2000);
         } else {
-            const errorResponse = await response.json(); // Read the error response as JSON
+            const errorResponse = await response.json(); 
             ToastMessage('Error', errorResponse.error.message, 'warning', '#de5b3f');
         }
     } catch (error) {

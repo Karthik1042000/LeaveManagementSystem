@@ -9,10 +9,9 @@
 </head>
 <body>
     <div class="leave-record-container">
-        <h1>@(ViewBag.IsViewOnly ? "Update Leave Usage Track" : "View Leave Usage Track")</h1>
+        <h1>@(ViewBag.IsViewOnly ? "Edit Leave Usage" : "Leave Usage")</h1>
 
         <form id="leaveTrackForm" action="/save" method="POST">
-            <!-- Hidden field for ID -->
             <input type="hidden" id="idField" name="id" value="@Model.Id" />
 
             <div class="form-group">
@@ -73,7 +72,7 @@
             <div class="buttons-group">
                 @if (ViewBag.IsViewOnly)
                 {
-                    <button type="submit" id="submitButton" class="btn-primary">Save Record</button>
+                    <button type="submit" id="submitButton" class="btn-primary"> Save </button>
                 }
             </div>
         </form>

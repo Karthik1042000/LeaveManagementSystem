@@ -1,14 +1,12 @@
 ﻿window.onload = function () {
-    // Attach blur events to validate on field loss of focus
     document.getElementById("nameField").onblur = validateName;
     document.getElementById("emailField").onblur = validateEmail;
     document.getElementById("passwordField").onblur = validatePassword;
     document.getElementById("roleField").onblur = validateRole;
-
-    // Attach submit event to the form
+    
     document.getElementById("employeeForm").onsubmit = function (event) {
         if (!checkFormValidity()) {
-            event.preventDefault(); // Prevent form submission if not valid
+            event.preventDefault(); 
         }
     };
 };
@@ -28,7 +26,7 @@ function validateName(showError = false) {
 function validateEmail(showError = false) {
     const emailField = document.getElementById("emailField");
     const errorElement = document.getElementById("emailError");
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex pattern
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
     if (!re.test(String(emailField.value).toLowerCase())) {
         if (showError) errorElement.style.display = 'block';
         return false;
@@ -63,23 +61,20 @@ function validateRole(showError = false) {
 }
 
 function checkFormValidity() {
-    // Check all fields' validity
     validateName(true);
     validateEmail(true);
     validatePassword(true);
     validateRole(true);
-
-    // Check if any error message is displayed
+    
     return validateName(true) && validateEmail(true) && validatePassword(true) && validateRole(true);
 }
 
 document.getElementById('employeeForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); 
     let idValue = null;
     if (document.getElementById('idField') !== null) {
         idValue = document.getElementById('idField').value;
     }
-    // Collect the form data
     const formData = {
         id: idValue,
         name: document.getElementById('nameField').value,
@@ -89,7 +84,6 @@ document.getElementById('employeeForm').addEventListener('submit', async functio
     };
 
     try {
-        // Send a POST request to the server
         const response = await fetch('/Employee/SaveEmployee', {
             method: 'POST',
             headers: {
@@ -111,7 +105,7 @@ document.getElementById('employeeForm').addEventListener('submit', async functio
                 window.location.href = '/Employee/EmployeeManagement';
             }, 2000);
         } else {
-            const errorResponse = await response.json(); // Read the error response as JSON
+            const errorResponse = await response.json(); 
             ToastMessage('Error', errorResponse.error.message, 'warning', '#de5b3f');
         }
     } catch (error) {

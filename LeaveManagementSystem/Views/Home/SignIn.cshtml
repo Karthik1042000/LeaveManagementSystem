@@ -1,7 +1,7 @@
 ﻿@model SignIn
 
 @{
-    ViewData["Title"] = "SignIn"; // Set the title for the page
+    ViewData["Title"] = "SignIn"; 
 }
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h2>Sign In</h2> <!-- Centered heading -->
+        <h2>Sign In</h2> 
         @using (Html.BeginForm("SignIn", "Home", FormMethod.Post, new { id = "signInForm" }))
         {
             <div class="form-group">

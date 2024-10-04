@@ -9,11 +9,10 @@ namespace LeaveManagementSystem.Infrastructure.Common
         public AnnualLeaveRecordMapper()
         {
             CreateMap<AnnualLeaveRecordModel, AnnualLeaveRecord>()
-           .ForMember(dest => dest.Role, opt => opt.Ignore()); // Ignore Roles, since it is not in LeaveRecord
+           .ForMember(dest => dest.Role, opt => opt.Ignore()); 
 
-            // Mapping from LeaveRecord to LeaveRecordModel
             CreateMap<AnnualLeaveRecord, AnnualLeaveRecordModel>()
-                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.Name)) // Map Role object to string name
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.Name)) 
                 .ForMember(dest => dest.Roles, opt => opt.Ignore());
         }
     }

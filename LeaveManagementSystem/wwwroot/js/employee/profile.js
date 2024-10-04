@@ -6,16 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const saveButton = document.getElementById('saveChangesButton');
     const nameInput = document.getElementById('name');
     const passwordInput = document.getElementById('password');
-
-    // Add event listeners for input changes
+    
     nameInput.addEventListener('input', validateFields);
     passwordInput.addEventListener('input', validateFields);
     
     function validateFields() {
         const nameValue = nameInput.value;
         const passwordValue = passwordInput.value;
-
-        // Check if the values have changed
+        
         const isNameChanged = nameValue !== originalName;
         const isPasswordChanged = passwordValue !== originalPassword;
 
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const isPasswordValid = passwordValue.length > 5;
 
         if ((isNameChanged && isNameValid) || (isPasswordChanged && isPasswordValid)) {
-            saveButton.disabled = false; // Enable Save Changes button
+            saveButton.disabled = false; 
         } else {
             saveButton.disabled = true;
         }
@@ -32,8 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         saveButton.disabled = true;
     }
     initializeForm();
-
-    // Function to handle form submission
+    
     window.formSubmit = function (event) {
         event.preventDefault(); 
 
@@ -44,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             RoleName: document.getElementById('role').value,
             Password: passwordInput.value
         };
-        // Submit the data to the server using fetch
+      
         fetch('/employee/saveProfile', {
             method: 'POST',
             headers: {
@@ -69,6 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error('Error:', error);
             });
 
-        return false; // Prevent further form submission handling
+        return false; 
     };
 });

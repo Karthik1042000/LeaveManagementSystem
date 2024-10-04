@@ -10,14 +10,13 @@ namespace LeaveManagementSystem.Infrastructure.Common
         {
             CreateMap<LeaveUsageTracker, LeaveUsageTrackerModel>()
            .ForMember(dest => dest.EmployeeName, opt => opt.MapFrom(src => src.Employee.Name))
-           .ForMember(dest => dest.ALPending, opt => opt.Ignore()) // Ignore if not needed
+           .ForMember(dest => dest.ALPending, opt => opt.Ignore()) 
            .ForMember(dest => dest.CLPending, opt => opt.Ignore())
            .ForMember(dest => dest.RHPending, opt => opt.Ignore())
            .ForMember(dest => dest.BLPending, opt => opt.Ignore());
 
-            // Mapping from LTViewModel to LeaveTracker
             CreateMap<LeaveUsageTrackerModel, LeaveUsageTracker>()
-                .ForMember(dest => dest.Employee, opt => opt.Ignore()); // Ignore Employee property; handle it separately if needed
+                .ForMember(dest => dest.Employee, opt => opt.Ignore()); 
         }
     }
 }

@@ -79,3 +79,4 @@ C:\Users\Karthik\source\repos\LeaveManagementSystem\LeaveManagementSystem\obj\De
 C:\Users\Karthik\source\repos\LeaveManagementSystem\LeaveManagementSystem\obj\Debug\net8.0\LeaveManagementSystem.genruntimeconfig.cache
 C:\Users\Karthik\source\repos\LeaveManagementSystem\LeaveManagementSystem\obj\Debug\net8.0\ref\LeaveManagementSystem.dll
 C:\Users\Karthik\source\repos\LeaveManagementSystem\LeaveManagementSystem\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Karthik\source\repos\LeaveManagementSystem\LeaveManagementSystem\obj\Debug\net8.0\LeaveManagementSystem.sourcelink.json

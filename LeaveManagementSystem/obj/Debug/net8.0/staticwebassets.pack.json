@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\LeaveManagementSystem.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Karthik\\source\\repos\\LeaveManagementSystem\\LeaveManagementSystem\\wwwroot\\css\\accessDenied.css",
+      "PackagePath": "staticwebassets\\css\\accessDenied.css"
+    },
+    {
       "Id": "C:\\Users\\Karthik\\source\\repos\\LeaveManagementSystem\\LeaveManagementSystem\\wwwroot\\css\\dataTables.css",
       "PackagePath": "staticwebassets\\css\\dataTables.css"
     },

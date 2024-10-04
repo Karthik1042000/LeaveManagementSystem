@@ -1,18 +1,16 @@
 ﻿window.onload = function () {
     document.getElementById("nameField").onblur = validateName;
-
-    // Attach submit event to the form
+    
     document.getElementById("roleForm").onsubmit = function (event) {
         if (!checkFormValidity()) {
-            event.preventDefault(); // Prevent form submission if not valid
+            event.preventDefault(); 
         }
     };
 };
 
 function checkFormValidity() {
     const nameValid = validateName(true);
-
-    // Enable or disable the button based on the validity of fields
+    
     const submitButton = document.getElementById("submitButton");
     submitButton.disabled = !(nameValid);
 
@@ -31,16 +29,14 @@ function validateName(showError = false) {
 }
 
 document.getElementById('roleForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Collect the form data
+    event.preventDefault();
+    
     const formData = {
         name: document.getElementById('nameField').value,
         id: document.getElementById('idField').value
     };
 
     try {
-        // Send a POST request to the server
         const response = await fetch('/Role/SaveRole', {
             method: 'POST',
             headers: {
@@ -62,7 +58,7 @@ document.getElementById('roleForm').addEventListener('submit', async function (e
                 window.location.href = '/Role/RoleManagement';
             }, 2000);
         } else {
-            const errorResponse = await response.json(); // Read the error response as JSON
+            const errorResponse = await response.json(); 
             ToastMessage('Error', errorResponse.error.message, 'warning', '#de5b3f');
         }
     } catch (error) {

@@ -72,5 +72,10 @@ namespace LeaveManagementSystem.Controllers
             return RedirectToAction("SignIn", "Home");
         }
 
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
     }
 }

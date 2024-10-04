@@ -13,7 +13,7 @@ namespace LeaveManagementSystem.Infrastructure.Common
            .ForMember(dest => dest.State, opt => opt.Ignore());
 
             CreateMap<Employee, EmployeeModel>()
-                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.Name)) // Map Role object to string name
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.Name)) 
                 .ForMember(dest => dest.Roles, opt => opt.Ignore());
         }
     }

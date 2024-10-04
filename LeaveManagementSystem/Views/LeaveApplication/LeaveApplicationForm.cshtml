@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="leave-record-container">
-        <h1>@(Model.Id == 0 ? "Leave Application Form" : "Update Leave Application")</h1>
+        <h1>Leave Application Form</h1>
 
         @using (Html.BeginForm("SaveLeaveApplication", "LeaveApplication", FormMethod.Post, new { id = "leaveApplicationForm" }))
         {

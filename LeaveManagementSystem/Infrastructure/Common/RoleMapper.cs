@@ -11,7 +11,6 @@ namespace LeaveManagementSystem.Infrastructure.Common
             CreateMap<RoleModel, Role>()
            .ForMember(dest => dest.State, opt => opt.Ignore());
 
-            // Mapping from Role to RoleModel
             CreateMap<Role, RoleModel>();
         }
     }

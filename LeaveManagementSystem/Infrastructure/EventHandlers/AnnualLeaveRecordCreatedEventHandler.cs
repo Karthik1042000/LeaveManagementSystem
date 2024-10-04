@@ -39,7 +39,7 @@ namespace LeaveManagementSystem.Infrastructure.EventHandlers
             {
                 // Fetch all employees with the specified RoleId
                 var employeeList = await _employeeRepository.FindAsync(x => x.Role.Id == annualLeaveRecord.RoleId);
-                var leaveUsageTrackers = new List<LeaveUsageTracker>(); // Updated variable name
+                var leaveUsageTrackers = new List<LeaveUsageTracker>(); 
 
                 foreach (var employee in employeeList)
                 {
@@ -52,11 +52,11 @@ namespace LeaveManagementSystem.Infrastructure.EventHandlers
                         RHUsed = 0,
                         Year = annualLeaveRecord.Year
                     };
-                    leaveUsageTrackers.Add(leaveTracker); // Use updated variable name
+                    leaveUsageTrackers.Add(leaveTracker); 
                 }
 
                 // Add the leave trackers to the repository
-                await _leaveUsageTrackerRepository.AddRangeAsync(leaveUsageTrackers); // Use updated variable name
+                await _leaveUsageTrackerRepository.AddRangeAsync(leaveUsageTrackers); 
                 _logger.LogInformation($"LeaveUsageTrackers created for LeaveRecordId {annualLeaveRecord.Id} for year {annualLeaveRecord.Year}.");
             }
             catch (Exception ex)

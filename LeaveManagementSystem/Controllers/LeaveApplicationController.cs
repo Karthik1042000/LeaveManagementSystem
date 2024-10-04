@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using LeaveManagementSystem.Models;
 using AutoMapper;
-using System.Security.Claims;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace LeaveManagementSystem.Controllers
 {

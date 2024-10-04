@@ -18,11 +18,11 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection InfrastructureServices(this IServiceCollection services,
         IConfiguration configuration)
     {
-        // Add ApplicationDbContext with SQL Server configuration
+        // ApplicationDbContext with SQL Server configuration
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-        // Register repositories (Generic and specific ones)
+        // repositories (Generic and specific ones)
         services.AddAutoMapper(typeof(AnnualLeaveRecordMapper).Assembly);
         services.AddAutoMapper(typeof(ProfileMapper).Assembly);
         services.AddAutoMapper(typeof(EmployeeMapper).Assembly);
@@ -41,22 +41,21 @@ public static class ServiceCollectionExtensions
         
         services.AddControllers(options =>
         {
-            options.Filters.Add<HttpResponseExceptionFilter>(); // Add the custom exception filter
+            options.Filters.Add<HttpResponseExceptionFilter>(); // custom exception filter
         });
 
         services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(options =>
         {
-            options.LoginPath = "/Home/SignIn"; // Specify your login path
+            options.LoginPath = "/Home/SignIn";
+            options.AccessDeniedPath = "/Home/AccessDenied";
         });
 
         services.AddControllersWithViews();
 
-        // Add HTTP context accessor and session services
         services.AddHttpContextAccessor();
         services.AddSession();
 
-        // Register Event Handlers
         services.AddScoped<IEmployeeCreatedEventHandler, EmployeeCreatedEventHandler>();
         services.AddScoped<IAnnualLeaveRecordCreatedEventHandler, AnnualLeaveRecordCreatedEventHandler>();
 

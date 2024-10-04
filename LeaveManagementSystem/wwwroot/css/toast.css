@@ -1,5 +1,4 @@
-﻿/* Define a custom CSS animation for the slide effect */
-@keyframes slideRightToLeft {
+﻿@keyframes slideRightToLeft {
     from {
         transform: translateX(100%);
     }
@@ -9,12 +8,10 @@
     }
 }
 
-/* Apply the animation to the toast message */
 .toast-slide {
     animation: slideRightToLeft 0.5s ease;
 }
 
-/* Define the reverse animation for hiding */
 @keyframes slideLeftToRight {
     from {
         transform: translateX(0);
@@ -25,7 +22,6 @@
     }
 }
 
-/* Apply the animation to hide the toast message */
 .toast-slide-hide {
     animation: slideLeftToRight 0.5s ease;
 }

@@ -16,11 +16,9 @@
         }
         else
         {
-            <h1>Update Employee</h1>
+            <h1>Edit Employee</h1>
         }
-        <!-- Start the form -->
         <form id="employeeForm" action="/Employee/Save" method="POST">
-            <!-- Hidden field for ID, shown only if it exists -->
             @if (!string.IsNullOrEmpty(Model.Id))
             {
                 <div class="form-group">
@@ -29,28 +27,24 @@
                 </div>
             }
 
-            <!-- Name field -->
             <div class="form-group">
                 <label for="nameField">Name:</label>
                 <input type="text" id="nameField" name="name" class="form-control" value="@Model.Name" required>
                 <div id="nameError" class="error">Name must be at least 3 characters long.</div>
             </div>
 
-            <!-- Email field -->
             <div class="form-group">
                 <label for="emailField">Email:</label>
                 <input type="text" id="emailField" name="email" class="form-control" value="@Model.Email" required>
                 <div id="emailError" class="error">Invalid email. Please enter a valid email address.</div>
             </div>
 
-            <!-- Password field -->
             <div class="form-group">
                 <label for="passwordField">Password:</label>
                 <input type="text" id="passwordField" name="password" class="form-control" value="@Model.Password" required>
                 <div id="passwordError" class="error">Password must be at least 5 characters long.</div>
             </div>
 
-            <!-- Role dropdown field -->
             <div class="form-group">
                 <label for="roleField">Role:</label>
                 <select id="roleField" class="form-control" name="roleId" required>
@@ -66,12 +60,10 @@
                 <div id="roleError" class="error">Role cannot be empty.</div>
             </div>
 
-            <!-- Submit button -->
             <div class="buttons-group">
                 <button type="submit" id="submitButton" class="btn-primary">Save</button>
             </div>
         </form>
-        <!-- End of form -->
 
     </div>
     <script src="~/js/employee/employeeform.js"></script>

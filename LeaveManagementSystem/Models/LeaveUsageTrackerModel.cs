@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string EmployeeId { get; set; } = null!;
-        public string EmployeeName { get; set; } = null!; // If you want to display employee name
+        public string EmployeeName { get; set; } = null!;
         public int Year { get; set; }
         public int ALUsed { get; set; }
         public int CLUsed { get; set; }

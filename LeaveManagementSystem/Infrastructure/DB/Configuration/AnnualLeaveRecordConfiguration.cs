@@ -8,14 +8,11 @@ namespace LeaveManagementSystem.Infrastructure.DB.Configuration
     {
         public void Configure(EntityTypeBuilder<AnnualLeaveRecord> builder)
         {
-            // Define the primary key for the AnnualLeaveRecord entity
             builder.HasKey(alr => alr.Id);
 
-            // Configure the Year property as required
             builder.Property(alr => alr.Year)
                 .IsRequired();
 
-            // Configure leave properties (Annual Leave, Casual Leave, etc.)
             builder.Property(alr => alr.AnnualLeave)
                 .IsRequired();
 
@@ -28,8 +25,7 @@ namespace LeaveManagementSystem.Infrastructure.DB.Configuration
             builder.Property(alr => alr.BonusLeave)
                 .IsRequired();
 
-            // Define the relationship between AnnualLeaveRecord and Role (many-to-one relationship)
-            builder.HasOne(alr => alr.Role)
+           builder.HasOne(alr => alr.Role)
                 .WithMany()
                 .HasForeignKey(alr => alr.RoleId)
                 .IsRequired();

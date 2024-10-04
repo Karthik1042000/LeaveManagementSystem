@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OCUVKeBzuPSqJZP7WehO4v/sxH9zQe42ZUmrtSqecN0=",
+  "Hash": "voQN7VyWJQJQYS/ZPsVpoXqq++m21LDXcOTEIayb0pU=",
   "Source": "LeaveManagementSystem",
   "BasePath": "_content/LeaveManagementSystem",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Karthik\\source\\repos\\LeaveManagementSystem\\LeaveManagementSystem\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LeaveManagementSystem.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Karthik\\source\\repos\\LeaveManagementSystem\\LeaveManagementSystem\\wwwroot\\css\\accessDenied.css",
+      "SourceId": "LeaveManagementSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Karthik\\source\\repos\\LeaveManagementSystem\\LeaveManagementSystem\\wwwroot\\",
+      "BasePath": "_content/LeaveManagementSystem",
+      "RelativePath": "css/accessDenied.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\accessDenied.css"
     },
     {
       "Identity": "C:\\Users\\Karthik\\source\\repos\\LeaveManagementSystem\\LeaveManagementSystem\\wwwroot\\css\\dataTables.css",

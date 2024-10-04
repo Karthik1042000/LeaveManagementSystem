@@ -10,7 +10,6 @@ namespace LeaveManagementSystem.Infrastructure.DB.Configuration
         {
             builder.HasKey(r => r.Id);
 
-            // Set the RoleName property as required (not nullable)
             builder.Property(r => r.Name)
                 .IsRequired()
                 .HasMaxLength(25);

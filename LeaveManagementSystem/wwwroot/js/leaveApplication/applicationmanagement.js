@@ -25,15 +25,14 @@ async function Approve(id) {
                 'Content-Type': 'application/json; charset=utf-8',
             }
         });
-
-        // Check if the response is OK (status code 200-299)
+        
         if (response.ok) {
             ToastMessage('Success', 'Successfully Approved', 'success', 'green');
             setTimeout(function () {
                 location.reload();
             }, 2000);
         } else {
-            const errorResponse = await response.json(); // Read the error response as JSON
+            const errorResponse = await response.json(); 
             ToastMessage('Error', errorResponse.error.message, 'warning', '#de5b3f');
         }
     } catch (error) {
@@ -56,7 +55,7 @@ async function Reject(id) {
                 location.reload();
             }, 2000);
         } else {
-            const errorResponse = await response.json(); // Read the error response as JSON
+            const errorResponse = await response.json(); 
             ToastMessage('Error', errorResponse.error.message, 'warning', '#de5b3f');
         }
     } catch (error) {
@@ -79,7 +78,7 @@ async function Delete(id) {
                 location.reload();
             }, 2000);
         } else {
-            const errorResponse = await response.json(); // Read the error response as JSON
+            const errorResponse = await response.json(); 
             ToastMessage('Error', errorResponse.error.message, 'warning', '#de5b3f');
         }
     } catch (error) {

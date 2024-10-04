@@ -1,10 +1,19 @@
-﻿/* Style for the navbar brand link */
+﻿
 .logo-font {
     font-size: 21px;
     color: #5b5fc7;
 }
 
-    /* Add hover effect */
     .logo-font:hover {
         color: #232796;
     }
+
+
+.home {
+    width: 100px;
+    margin-right: 10px;
+}
+.home-buttons {
+    position: absolute;
+    margin-left: 80.8em;
+}

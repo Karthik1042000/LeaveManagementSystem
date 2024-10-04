@@ -60,7 +60,7 @@ namespace LeaveManagementSystem.Infrastructure.EventHandlers
             catch (Exception ex)
             {
                 logger.LogError(ex, "Error occurred while handling EmployeeCreatedEvent for EmployeeId {EmployeeId}.", employee.Id);
-                throw; // Re-throw the exception if you want to let it propagate
+                throw; 
             }
 
         }

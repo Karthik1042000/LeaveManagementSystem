@@ -1,21 +1,18 @@
 ﻿window.onload = function () {
-    // Attach blur events to validate on field loss of focus
     document.getElementById("yearField").onblur = validateYear;
     document.getElementById("annualLeaveField").onblur = validateAnnualLeave;
     document.getElementById("casualLeaveField").onblur = validateCasualLeave;
     document.getElementById("restrictedHolidayField").onblur = validateRestrictedHoliday;
     document.getElementById("bonusLeaveField").onblur = validateBonusLeave;
     document.getElementById("roleField").onblur = validateRole;
-
-    // Attach submit event to the form
+    
     document.getElementById("annualLeaveRecordForm").onsubmit = function (event) {
         if (!checkFormValidity()) {
-            event.preventDefault(); // Prevent form submission if not valid
+            event.preventDefault(); 
         }
     };
 };
 
-// Check the validity of the form fields
 function checkFormValidity() {
     const yearValid = validateYear(true);
     const annualLeaveValid = validateAnnualLeave(true);
@@ -23,15 +20,13 @@ function checkFormValidity() {
     const restrictedHolidayValid = validateRestrictedHoliday(true);
     const bonusLeaveValid = validateBonusLeave(true);
     const roleValid = validateRole(true);
-
-    // Enable or disable the button based on the validity of fields
+    
     const submitButton = document.getElementById("submitButton");
     submitButton.disabled = !(yearValid && annualLeaveValid && casualLeaveValid && restrictedHolidayValid && bonusLeaveValid && roleValid);
 
     return yearValid && annualLeaveValid && casualLeaveValid && restrictedHolidayValid && bonusLeaveValid && roleValid;
 }
 
-// Validation function for Year field
 function validateYear(showError = false) {
     const yearField = parseInt(document.getElementById("yearField").value);
     const currentYear = new Date().getFullYear();
@@ -45,28 +40,22 @@ function validateYear(showError = false) {
         return true;
     }
 }
-
-// Validation function for Annual Leave
 function validateAnnualLeave(showError = false) {
     return validateIntegerField("annualLeaveField", "annualLeaveError", showError);
 }
 
-// Validation function for Casual Leave
 function validateCasualLeave(showError = false) {
     return validateIntegerField("casualLeaveField", "casualLeaveError", showError);
 }
 
-// Validation function for Restricted Holiday
 function validateRestrictedHoliday(showError = false) {
     return validateIntegerField("restrictedHolidayField", "restrictedHolidayError", showError);
 }
 
-// Validation function for Bonus Leave
 function validateBonusLeave(showError = false) {
     return validateIntegerField("bonusLeaveField", "bonusLeaveError", showError);
 }
 
-// Generic integer validation function
 function validateIntegerField(fieldId, errorId, showError = false) {
     const field = parseInt(document.getElementById(fieldId).value);
     const errorElement = document.getElementById(errorId);
@@ -79,8 +68,6 @@ function validateIntegerField(fieldId, errorId, showError = false) {
         return true;
     }
 }
-
-// Validation function for Role field
 function validateRole(showError = false) {
     const roleField = document.getElementById("roleField").value;
     const roleError = document.getElementById("roleError");
@@ -94,9 +81,8 @@ function validateRole(showError = false) {
     }
 }
 document.getElementById('annualLeaveRecordForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Collect the form data
+    event.preventDefault();
+    
     const formData = {
         year: document.getElementById('yearField').value,
         annualLeave: document.getElementById('annualLeaveField').value,
@@ -108,7 +94,6 @@ document.getElementById('annualLeaveRecordForm').addEventListener('submit', asyn
     };
 
     try {
-        // Send a POST request to the server
         const response = await fetch('/AnnualLeaveRecord/SaveAnnualLeaveRecord', {
             method: 'POST',
             headers: {
@@ -130,7 +115,7 @@ document.getElementById('annualLeaveRecordForm').addEventListener('submit', asyn
                 window.location.href = '/AnnualLeaveRecord/AnnualRecordManagement';
             }, 2000);
         } else {
-            const errorResponse = await response.json(); // Read the error response as JSON
+            const errorResponse = await response.json(); 
             ToastMessage('Error', errorResponse.error.message, 'warning', '#de5b3f');
         }
     } catch (error) {

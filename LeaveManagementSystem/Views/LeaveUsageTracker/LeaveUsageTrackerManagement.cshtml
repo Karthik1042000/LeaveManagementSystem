@@ -1,7 +1,7 @@
 ﻿@model List<LeaveManagementSystem.Models.LeaveUsageTrackerModel>
 
 @{
-    ViewData["Title"] = "Leave Usage Tracker Management";
+    ViewData["Title"] = "Leave Usage Management";
     var isOwnerOrAdmin = ViewBag.Data as bool? ?? false;
 }
 
@@ -37,10 +37,10 @@
                         <td>@record.Year</td>
                         <td>
                             <div class="action-buttons">
-                                <a href="@Url.Action("LeaveUsageTrackerForm", "LeaveUsageTracker", new { id = record.Id })" class="btn-view">DataView</a>
+                                <a href="@Url.Action("LeaveUsageTrackerForm", "LeaveUsageTracker", new { id = record.Id })" class="btn-view">View</a>
                                 @if (isOwnerOrAdmin)
                                 {
-                                    <a href="@Url.Action("LeaveUsageTrackerForm", "LeaveUsageTracker", new { id = record.Id , isViewOnly = true })" class="btn-update">Update</a>
+                                    <a href="@Url.Action("LeaveUsageTrackerForm", "LeaveUsageTracker", new { id = record.Id , isViewOnly = true })" class="btn-update"> Edit </a>
                                     <a href="@Url.Action("Delete", "LeaveUsageTracker", new { id = record.Id })" class="btn-delete">Delete</a>
                                 }
                             </div>

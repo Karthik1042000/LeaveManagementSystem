@@ -25,15 +25,15 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div style="position: relative; margin-left: 58em;">
-                    <div class="navbar-nav mr-auto">
-                        <a class="btn btn-primary" href="/Home/Index" style="width: 100px;">Index</a>
-                        <button type="button" class="btn btn-primary back" onclick="javascript:history.back()" style="margin-left: 15px; margin-right: 15px; width: 100px;">Back</button>
-                        <a class="btn btn-primary" href="/Home/SignOut" style="width: 100px;">SignOut</a>
+                @if (User.Identity!.IsAuthenticated)
+                {
+                    <div class="home-buttons">
+                        <div class="navbar-nav mr-auto">
+                            <a class="btn btn-primary home" href="/Home/Index">Home</a>
+                            <a class="btn btn-primary home" href="/Home/SignOut">SignOut</a>
+                        </div>
                     </div>
-                </div>
-
-                
+                }
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 </div>
             </div>

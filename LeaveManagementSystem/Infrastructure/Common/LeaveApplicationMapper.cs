@@ -9,12 +9,11 @@ namespace LeaveManagementSystem.Infrastructure.Common
         public LeaveApplicationMapper() 
         {
             CreateMap<LeaveApplication, LeaveApplicationModel>()
-            .ForMember(dest => dest.EmployeeName, opt => opt.MapFrom(src => src.Employee.Name)) // Map Employee Name
+            .ForMember(dest => dest.EmployeeName, opt => opt.MapFrom(src => src.Employee.Name)) 
             .ForMember(dest => dest.Approver, opt => opt.MapFrom(src => src.Approver != null ? src.Approver.Name : null));
-
-            // Mapping from LeaveApplicationModel (ViewModel) to LeaveApplication (Domain)
+                       
             CreateMap<LeaveApplicationModel, LeaveApplication>()
-                .ForMember(dest => dest.Employee, opt => opt.Ignore()) // Employee handled separately
+                .ForMember(dest => dest.Employee, opt => opt.Ignore()) 
                 .ForMember(dest => dest.Approver, opt => opt.Ignore());
         }
     }

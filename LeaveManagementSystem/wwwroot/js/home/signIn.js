@@ -83,7 +83,7 @@ document.getElementById('signInForm').addEventListener('submit', async function 
             globalRole = employee.userRole; 
             window.location.href = '/Home/Index';
         } else {
-            const errorResponse = await response.json(); // Read the error response as JSON
+            const errorResponse = await response.json(); 
             ToastMessage('Error', errorResponse.error.message, 'warning' , '#de5b3f');
         }
     } catch (error) {
