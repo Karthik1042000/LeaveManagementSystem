@@ -1,0 +1,38 @@
+﻿@model LeaveManagementSystem.Models.RoleModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Record Form</title>
+    <link href="~/css/form.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="leave-record-container">
+        @if (Model.Id == 0)
+        {
+            <h1>Role Form</h1>
+        }
+        else
+        {
+            <h1>Update Role</h1>
+        }
+
+        <form id="roleForm" action="/save" method="POST">
+            <input type="hidden" id="idField" name="id" value="@Model.Id">
+
+            <div class="form-group">
+                <label for="nameField">Name:</label>
+                <input type="text" id="nameField" name="name" class="form-control" value="@Model.Name" required>
+                <div id="nameError" class="error">Name must be at least 3 characters long.</div>
+            </div>
+
+            <div class="buttons-group">
+                <button type="submit" id="submitButton" class="btn-primary"> Save </button>
+            </div>
+        </form>
+    </div>
+    <script src="~/js/role/roleForm.js"></script>
+</body>
+</html>

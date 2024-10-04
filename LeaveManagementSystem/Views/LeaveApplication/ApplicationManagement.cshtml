@@ -1,0 +1,56 @@
+﻿@model List<LeaveManagementSystem.Models.LeaveApplicationModel>
+
+@{
+    ViewData["Title"] = "Leave Application Management";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/list.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+
+        <table id="dataTable" class="display">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>No Of Days</th>
+                    <th>Leave Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model)
+                {
+                    <tr>
+                        <td>@record.EmployeeId</td>
+                        <td>@record.EmployeeName</td>
+                        <td>@record.StartDate</td>
+                        <td>@record.EndDate</td>
+                        <td>@(record.EndDate.Date.Subtract(record.StartDate.Date).Days + 1)</td>
+                        <td>@record.LeaveType</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button onclick="Approve(@record.Id)" class="btn-update">Approve</button>
+                                <button onclick="Reject(@record.Id)" class="btn-delete">Reject</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <script src="~/js/leaveapplication/applicationmanagement.js"></script>
+</body>
+</html>

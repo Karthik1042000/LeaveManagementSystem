@@ -1,0 +1,65 @@
+﻿@using static LeaveManagementSystem.Models.LeaveApplicationModel.Types
+@model List<LeaveManagementSystem.Models.LeaveApplicationModel>
+
+@{
+    ViewData["Title"] = "Leave Application History";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/list.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+
+        <table id="dataTable" class="display">
+            <thead>
+                <tr>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>No Of Days</th>
+                    <th>Leave Type</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model)
+                {
+                    <tr>
+                        <td>@record.StartDate.ToShortDateString()</td>
+                        <td>@record.EndDate.ToShortDateString()</td>
+                        <td>@(record.EndDate.Date.Subtract(record.StartDate.Date).Days + 1)</td>
+                        <td>@record.LeaveType</td>
+                        <td>
+                            @switch (record.State)
+                            {
+                                case State.Pending:
+                                    
+                                    <div class="action-buttons">
+                                        <span style="align-content: center;">Pending</span>
+                                        <button onclick="Delete(@record.Id)" class="btn-delete">Delete</button>
+                                    </div>
+                                    break;
+                                case State.Approved:
+                                    <span>Approved</span>
+                                    break;
+                                case State.Rejected:
+                                    <span>Rejected</span>
+                                    break;
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="~/js/leaveapplication/applicationmanagement.js"></script>
+</html>

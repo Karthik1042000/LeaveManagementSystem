@@ -1,0 +1,29 @@
+﻿# Ignore Visual Studio temporary files
+*.vs/
+.vscode/
+*.sln.ide
+*.suo
+*.user
+
+# Ignore build directories
+/bin/
+/obj/
+
+# Ignore NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+# Ignore user-specific files
+*.userprefs
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.cache
+
+# Ignore environment variables
+.env
+
+# Ignore publish output
+publish/

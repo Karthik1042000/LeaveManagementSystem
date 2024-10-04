@@ -1,0 +1,58 @@
+﻿@model List<AnnualLeaveRecordModel>
+
+@{
+    ViewData["Title"] = "Annual Leave Record Management";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/list.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>@ViewData["Title"]</h1>
+            <a href="/AnnualLeaveRecord/AnnualLeaveRecordForm?id=0" class="btn-primary">Add Leave Record</a>
+        </div>
+
+        <table id="dataTable" class="display">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Role</th>
+                    <th>Year</th>
+                    <th>Annual Leave</th>
+                    <th>Casual Leave</th>
+                    <th>Restricted Holiday</th>
+                    <th>Bonus Leave</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model)
+                {
+                    <tr>
+                        <td>@record.Id</td>
+                        <td>@record.Role</td>
+                        <td>@record.Year</td>
+                        <td>@record.AnnualLeave</td>
+                        <td>@record.CasualLeave</td>
+                        <td>@record.RestrictedHoliday</td>
+                        <td>@record.BonusLeave</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="@Url.Action("AnnualLeaveRecordForm", "AnnualLeaveRecord", new { id = record.Id })" class="btn-update">Update</a>
+                                <a href="@Url.Action("Delete", "AnnualLeaveRecord", new { id = record.Id })" class="btn-delete">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

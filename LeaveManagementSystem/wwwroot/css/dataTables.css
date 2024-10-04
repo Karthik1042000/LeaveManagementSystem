@@ -1,0 +1,24 @@
+﻿.dataTables_filter {
+    padding-bottom: 10px;
+}
+
+.dataTables_wrapper {
+    padding-top: 10px;
+}
+
+td {
+    background-color: white;
+    text-align: center;
+}
+
+th {
+    padding: 10px;
+    text-align: center;
+    background-color:#ddd;
+}
+
+
+
+.dataTables_wrapper .dataTables_paginate {
+    padding-top: 0.5em !important;
+}

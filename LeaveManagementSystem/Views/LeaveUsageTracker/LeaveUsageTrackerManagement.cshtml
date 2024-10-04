@@ -1,0 +1,54 @@
+﻿@model List<LeaveManagementSystem.Models.LeaveUsageTrackerModel>
+
+@{
+    ViewData["Title"] = "Leave Usage Tracker Management";
+    var isOwnerOrAdmin = ViewBag.Data as bool? ?? false;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/list.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+
+        <table id="dataTable" class="display">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model)
+                {
+                    <tr>
+                        <td>@record.EmployeeId</td>
+                        <td>@record.EmployeeName</td>
+                        <td>@record.Year</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="@Url.Action("LeaveUsageTrackerForm", "LeaveUsageTracker", new { id = record.Id })" class="btn-view">DataView</a>
+                                @if (isOwnerOrAdmin)
+                                {
+                                    <a href="@Url.Action("LeaveUsageTrackerForm", "LeaveUsageTracker", new { id = record.Id , isViewOnly = true })" class="btn-update">Update</a>
+                                    <a href="@Url.Action("Delete", "LeaveUsageTracker", new { id = record.Id })" class="btn-delete">Delete</a>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

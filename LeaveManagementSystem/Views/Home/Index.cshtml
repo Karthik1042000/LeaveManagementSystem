@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var isAdmin = ViewBag.Data as bool? ?? false;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/index.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="index-container">
+        
+        <div class="profile-box">
+            <a href="#" id="profileLink" class="profile-link">Profile</a>
+        </div>
+
+        <input type="hidden" id="employeeId" value="" />
+        <input type="hidden" id="employeeRole" value="" />
+
+        <div id="boxesContainer" class="index-container">
+            <div class="box" id="boxLeaveApply">
+                <a href="/LeaveApplication/LeaveApplicationForm" class="profile-link">
+                    <h3>Apply for Leave</h3>
+                </a>
+            </div>
+            <div class="box" id="boxLeaveHistory">
+                <a href="#" id="historyLink" class="profile-link">
+                    <h3>Your Leave Requests</h3>
+                </a>
+            </div>
+            <div class="box" id="boxAvailableLeaves">
+                <a href="/LeaveUsageTracker/LeaveUsageTrackerManagement" class="profile-link">
+                    @if (isAdmin)
+                    {
+                        <h3>Leave Balance Overview</h3>
+                    }
+                    else
+                    {
+                        <h3>Your Leave Balance Overview</h3>
+                    }
+                </a>
+            </div>
+            <div class="box hidden" id="boxAdditional">
+                <a href="/LeaveApplication/ApplicationManagement" class="profile-link">
+                    <h3>Leave Application Management</h3>
+                </a>
+            </div>
+            <div class="box hidden" id="boxEmployeeManagement">
+                <a href="/Employee/EmployeeManagement" class="profile-link">
+                    <h3>Employee Management</h3>
+                </a>
+            </div>
+            <div class="box hidden" id="boxRoleManagement">
+                <a href="/Role/RoleManagement" class="profile-link">
+                    <h3>Role Management</h3>
+                </a>
+            </div>
+            <div class="box hidden" id="boxLeaveRecordManagement">
+                <a href="/AnnualLeaveRecord/AnnualRecordManagement" class="profile-link">
+                    <h3>Annual Leave Record Management</h3>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="~/js/home/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿@model LeaveManagementSystem.Models.AnnualLeaveRecordModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Record Form</title>
+    <link href="~/css/form.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="leave-record-container">
+        @if (Model.Id == 0)
+        {
+            <h1>Leave Record Form</h1>
+        }
+        else
+        {
+            <h1>Update Leave Record</h1>
+        }
+        
+        <form id="annualLeaveRecordForm" action="/save" method="POST">
+            <input type="hidden" id="idField" name="id" value="@Model.Id"> 
+            <input type="hidden" id="roleIdField" name="roleId" value="@Model.RoleId">
+
+            <div class="form-group">
+                <label for="roleField">Role:</label>
+                <select id="roleField" class="form-control" name="roleId" required>
+                    <option value="">Select a role</option>
+                    @if (Model.Roles != null)
+                    {
+                        foreach (var role in Model.Roles)
+                        {
+                            <option value="@role.Id" selected="@(role.Id == Model.RoleId)"> @role.Name</option>
+                        }
+                    }
+                </select>
+                <div id="roleError" class="error">Role cannot be empty.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="yearField">Year:</label>
+                <input type="number" id="yearField" name="year" class="form-control" value="@Model.Year" required>
+                <div id="yearError" class="error">Invalid year. Please enter a valid year.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="annualLeaveField">Annual Leave:</label>
+                <input type="number" id="annualLeaveField" name="annualLeave" class="form-control" value="@Model.AnnualLeave" required>
+                <div id="annualLeaveError" class="error">Please enter a valid number of annual leave days.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="casualLeaveField">Casual Leave:</label>
+                <input type="number" id="casualLeaveField" name="casualLeave" class="form-control" value="@Model.CasualLeave" required>
+                <div id="casualLeaveError" class="error">Please enter a valid number of casual leave days.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="restrictedHolidayField">Restricted Holiday:</label>
+                <input type="number" id="restrictedHolidayField" name="restrictedHoliday" class="form-control" value="@Model.RestrictedHoliday" required>
+                <div id="restrictedHolidayError" class="error">Please enter a valid number of restricted holidays.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="bonusLeaveField">Bonus Leave:</label>
+                <input type="number" id="bonusLeaveField" name="bonusLeave" class="form-control" value="@Model.BonusLeave" required>
+                <div id="bonusLeaveError" class="error">Please enter a valid number of bonus leave days.</div>
+            </div>
+
+            <div class="buttons-group">
+                <button type="submit" id="submitButton" class="btn-primary"> Save </button>
+            </div>
+        </form>
+    </div>
+    <script src="~/js/annualLeaveRecord/annualRecordForm.js"></script>
+</body>
+</html>

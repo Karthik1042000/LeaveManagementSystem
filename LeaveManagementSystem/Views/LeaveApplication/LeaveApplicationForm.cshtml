@@ -1,0 +1,57 @@
+﻿@using LeaveManagementSystem.Models;
+@using System.ComponentModel.DataAnnotations;
+
+@model LeaveManagementSystem.Models.LeaveApplicationModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Application Form</title>
+    <link href="~/css/form.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="leave-record-container">
+        <h1>@(Model.Id == 0 ? "Leave Application Form" : "Update Leave Application")</h1>
+
+        @using (Html.BeginForm("SaveLeaveApplication", "LeaveApplication", FormMethod.Post, new { id = "leaveApplicationForm" }))
+        {
+            <!-- Hidden field for ID -->
+            @Html.Hidden("Id", Model.Id)
+
+            <!-- Hidden field for Employee ID -->
+            @Html.Hidden("EmployeeId", Model.EmployeeId)
+
+            <div class="form-group">
+                <label for="startDateField">Start Date:</label>
+                @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control", type = "date", id = "startDateField", required = "required", value = Model.StartDate.ToString("yyyy-MM-dd") })
+                <div id="startDateError" class="error" style="display:none;">Start Date must be tomorrow or onwards.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="endDateField">End Date:</label>
+                @Html.TextBoxFor(m => m.EndDate, new { @class = "form-control", type = "date", id = "endDateField", required = "required", value = Model.EndDate.ToString("yyyy-MM-dd") })
+                <div id="endDateError" class="error" style="display:none;">End Date must be the same or after Start Date.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="leaveTypeField">Leave Type:</label>
+                <select class="form-control" id="leaveTypeField" required="required" name="LeaveType">
+                    <option value="0">Annual Leave</option>
+                    <option value="1">Casual Leave</option>
+                    <option value="2">Restricted Holiday</option>
+                    <option value="3">Bonus Leave</option>
+                </select>
+                <div id="leaveTypeFieldError" class="error">Select any Leave types below</div>
+            </div>
+
+
+            <div class="buttons-group">
+                <button type="submit" id="submitButton" class="btn-primary">Save Record</button>
+            </div>
+        }
+    </div>
+    <script src="~/js/leaveapplication/leaveapplicationform.js"></script>
+</body>
+</html>

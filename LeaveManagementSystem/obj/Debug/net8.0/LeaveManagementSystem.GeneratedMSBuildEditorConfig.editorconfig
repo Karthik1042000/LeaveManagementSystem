@@ -1,0 +1,91 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LeaveManagementSystem
+build_property.RootNamespace = LeaveManagementSystem
+build_property.ProjectDir = C:\Users\Karthik\source\repos\LeaveManagementSystem\LeaveManagementSystem\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Karthik\source\repos\LeaveManagementSystem\LeaveManagementSystem
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/AnnualLeaveRecord/AnnualLeaveRecordForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5udWFsTGVhdmVSZWNvcmRcQW5udWFsTGVhdmVSZWNvcmRGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/AnnualLeaveRecord/AnnualRecordManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5udWFsTGVhdmVSZWNvcmRcQW5udWFsUmVjb3JkTWFuYWdlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/Employee/EmployeeForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRW1wbG95ZWVGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/Employee/EmployeeManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRW1wbG95ZWVNYW5hZ2VtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/Employee/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/Home/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/LeaveApplication/ApplicationHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVBcHBsaWNhdGlvblxBcHBsaWNhdGlvbkhpc3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/LeaveApplication/ApplicationManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVBcHBsaWNhdGlvblxBcHBsaWNhdGlvbk1hbmFnZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/LeaveApplication/LeaveApplicationForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVBcHBsaWNhdGlvblxMZWF2ZUFwcGxpY2F0aW9uRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/LeaveUsageTracker/LeaveUsageTrackerForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVVc2FnZVRyYWNrZXJcTGVhdmVVc2FnZVRyYWNrZXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/LeaveUsageTracker/LeaveUsageTrackerManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVVc2FnZVRyYWNrZXJcTGVhdmVVc2FnZVRyYWNrZXJNYW5hZ2VtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/Role/RoleForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxSb2xlRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/Role/RoleManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxSb2xlTWFuYWdlbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karthik/source/repos/LeaveManagementSystem/LeaveManagementSystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-lb1w6sa3rz

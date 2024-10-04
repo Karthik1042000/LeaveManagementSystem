@@ -1,0 +1,79 @@
+﻿@model EmployeeModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Record Form</title>
+    <link href="~/css/form.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="leave-record-container">
+        @if (Model.Id == null)
+        {
+            <h1>Employee Form</h1>
+        }
+        else
+        {
+            <h1>Update Employee</h1>
+        }
+        <!-- Start the form -->
+        <form id="employeeForm" action="/Employee/Save" method="POST">
+            <!-- Hidden field for ID, shown only if it exists -->
+            @if (!string.IsNullOrEmpty(Model.Id))
+            {
+                <div class="form-group">
+                    <label for="idField">Employee ID:</label>
+                    <input type="text" id="idField" name="id" class="form-control" value="@Model.Id" readonly>
+                </div>
+            }
+
+            <!-- Name field -->
+            <div class="form-group">
+                <label for="nameField">Name:</label>
+                <input type="text" id="nameField" name="name" class="form-control" value="@Model.Name" required>
+                <div id="nameError" class="error">Name must be at least 3 characters long.</div>
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group">
+                <label for="emailField">Email:</label>
+                <input type="text" id="emailField" name="email" class="form-control" value="@Model.Email" required>
+                <div id="emailError" class="error">Invalid email. Please enter a valid email address.</div>
+            </div>
+
+            <!-- Password field -->
+            <div class="form-group">
+                <label for="passwordField">Password:</label>
+                <input type="text" id="passwordField" name="password" class="form-control" value="@Model.Password" required>
+                <div id="passwordError" class="error">Password must be at least 5 characters long.</div>
+            </div>
+
+            <!-- Role dropdown field -->
+            <div class="form-group">
+                <label for="roleField">Role:</label>
+                <select id="roleField" class="form-control" name="roleId" required>
+                    <option value="">Select a role</option>
+                    @if (Model.Roles != null)
+                    {
+                        foreach (var role in Model.Roles)
+                        {
+                            <option value="@role.Id" selected="@(role.Id == Model.RoleId)"> @role.Name</option>
+                        }
+                    }
+                </select>
+                <div id="roleError" class="error">Role cannot be empty.</div>
+            </div>
+
+            <!-- Submit button -->
+            <div class="buttons-group">
+                <button type="submit" id="submitButton" class="btn-primary">Save</button>
+            </div>
+        </form>
+        <!-- End of form -->
+
+    </div>
+    <script src="~/js/employee/employeeform.js"></script>
+</body>
+</html>
